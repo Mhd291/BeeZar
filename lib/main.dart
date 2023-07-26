@@ -1,5 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:flutter_easyloading/flutter_easyloading.dart';
+import 'modules/login/login.dart';
+import 'modules/signup/signup.dart';
+
 
 
 void main() async{
@@ -14,13 +18,14 @@ class MyApp extends StatelessWidget{
       theme: ThemeData(
        // primaryColor: kPrimaryColor,
       ),
-      initialRoute: '/home',
+      initialRoute: '/signup',
       getPages:
       [
-      //  GetPage(name: '/login', page: ()=>LoginScreen(),binding:LogBinding()),
+        GetPage(name: '/login', page: ()=>LogIn()),
+        GetPage(name: '/signup', page: ()=>SignupPage()),
 
       ],
-
+      builder: EasyLoading.init(),
     );
   }
 
